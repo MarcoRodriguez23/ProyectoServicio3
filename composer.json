@@ -1,0 +1,21 @@
+{
+    "name": "marco/proyecto-servicio_3",
+    "description": "Proyecto 3 servicio social",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Marco Rodriguez",
+            "email": "cv5233@innovaccion.mx"
+        }
+    ],
+    "require": {
+        "intervention/image": "^2.7"
+    },
+    "autoload":{
+        "psr-4": {
+            "Model\\":"./models",
+            "MVC\\":"./",
+            "Controllers\\": "./controllers"
+        }
+    }
+}
