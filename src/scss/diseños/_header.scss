@@ -1,0 +1,36 @@
+/*
+-----------------HEADER-----------------
+*/
+
+.header{
+    height: 7rem;
+    background-color: $negro;
+    display: flex;
+    align-items: center;
+    .contenedor{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .navegacion{
+
+            a{
+                background-color: $blanco;
+                border-radius: 2rem;
+                border: none;
+                padding: 0.5rem 1rem;
+                font-size: 2rem;
+                font-weight: $bold;
+                color: $azul;
+                margin-right: 4rem;
+                transition: all 250ms ease;
+                &:last-of-type{
+                    margin-right: 0;
+                }
+                &:hover{
+                    background-color: $azul;
+                    color: $blanco;
+                }
+            }
+        }
+    }
+}

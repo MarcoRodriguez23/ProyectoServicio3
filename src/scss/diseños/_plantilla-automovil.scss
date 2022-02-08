@@ -1,0 +1,50 @@
+/*
+-----------------automoviles en la pagina principal-----------------
+*/
+
+.automoviles{
+    margin: 1rem 2rem ;
+    @include tablet {
+        @include grid(3,2rem);
+    }
+}
+
+.automovil{
+    border: 1px solid grey;
+    
+}
+
+.imagen-automovil{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    .promocion,.agregar-a-favoritos{
+        position: absolute;
+        margin: 0;
+        top: 0%;
+    }
+    .promocion{ 
+        left: 0%;
+        background-color: $azul;
+        color: $blanco;
+        padding: 0 1rem;
+    }
+    .agregar-a-favoritos{
+        right: 0%;
+        label{
+            -webkit-text-stroke: 1px black;
+            color: transparent; 
+            font-size: 4rem;
+            &:hover{
+                color: yellow;
+            }
+        }
+        input[type="checkbox"]{
+            display: none;
+            &:checked ~ label {
+                color: orange;
+              }
+        }
+    }
+}
+

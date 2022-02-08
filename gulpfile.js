@@ -45,7 +45,7 @@ function imagenes() {
         .pipe(cache(imagemin({
             optimizationLevel:3
         })))
-        .pipe(dest('build/img'))
+        .pipe(dest('./public/build/img'))
         .pipe(notify({ message: 'Imagen simplificada Completada'}));      
 }
 

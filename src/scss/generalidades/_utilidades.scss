@@ -3,83 +3,9 @@
 }
 
 .sombra{
-    -webkit-box-shadow: 2px 12px 26px 8px rgba(0,0,0,0.1);
-    -moz-box-shadow: 2px 12px 26px 8px rgba(0,0,0,0.1);
-    box-shadow: 2px 12px 26px 8px rgba(0,0,0,0.1);
-}
-
-.boton-rojo{
-    @include boton($rojo);
-    @include transicionBotones($rojo-intenso);
-}
-
-.boton-amarillo{
-    @include boton($amarillo);
-    @include transicionBotones($amarillo-intenso);
-}
-
-.boton-verde{
-    @include boton ($verde);
-    @include transicionBotones($verde-intenso);
-}
-
-.boton-azul{
-    @include boton ($azul);
-    color: $blanco;
-}
-
-.boton-volver{
-    @include boton($amarillo);
-    font-size: 2rem;
-    height: auto;
-    width: auto;
-    color: $negro;
-    @include transicionBotones($amarillo-intenso);
-}
-
-.boton-aumento{
-    @include boton ($azul);
-    color: $negro;
-    &:focus{
-        background-color: $azul-intenso;
-    }
-}
-
-.boton-tipo{
-    @include boton ($azul);
-    color: $negro;
-    &:focus{
-        background-color: $azul-intenso;
-    }
-}
-
-
-.boton-superior{
-    background-color: $amarillo;
-    width: 12rem;
-    height: 12rem;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    @include transicionBotones($amarillo-intenso);
-    &:hover{
-        transform: scale(1.15);
-    }
-
-}
-
-.opcion-superior{
-    margin: 2rem auto;
-    display: flex;
-    justify-content: flex-end;
-    a{
-        img{
-            height: 60%;
-            width: 60%;
-            margin:auto;
-        }
-    }
+    -webkit-box-shadow: 0px 0px 28px 8px rgba(0,0,0,0.18);
+    -moz-box-shadow: 0px 0px 28px 8px rgba(0,0,0,0.18);
+    box-shadow: 0px 0px 28px 8px rgba(0,0,0,0.18);
 }
 
 .plantilla{
@@ -87,41 +13,11 @@
     flex-direction: column;
 }
 
-.tabla{
-    border: 1px solid $gris;
-    border-radius: 0.5rem;
-    background-color: $blanco-gris;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    table{
-        background-color: $blanco;
-        width: 98%;
-        margin: 2rem auto;
-        th,td{
-            border: 1px solid $gris;
-            text-align: center;
-            padding: 0.5rem 1rem;
-            font-size: 1.2rem;
-        }
-    }
-
+.wrapper{
+    display: grid;
+    grid-template-columns: 30% 70%;
     @include tablet{
-        table{
-            th,td{
-                font-size: 1.6rem;
-            }
-        }
+        grid-template-columns: 20% 80%;
     }
-}
-
-.comision{
-    background-color: $verde !important;
-}
-
-.leyenda-representante{
-    background-color: $azul;
-}
-
-.leyenda-vendedor{
-    background-color: $verde;
+    
 }
