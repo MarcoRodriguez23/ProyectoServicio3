@@ -1,16 +1,34 @@
-<?php
-    require_once __DIR__ . '/../includes/app.php';
+<?php 
 
-    use MVC\Router;
-    use Controllers\AutomovilController;
-    use Controllers\LoginController;
+require_once __DIR__ . '/../includes/app.php';
 
-    $router = new Router();
+use MVC\Router;
+use Controllers\AutomovilController;
+use Controllers\LoginController;
 
-    $router->get('/',[AutomovilController::class,'index']);
-    $router->get('/login',[LoginController::class,'login']);
-    $router->post('/login',[LoginController::class,'login']);
-    $router->get('/login/credenciales',[LoginController::class,'credenciales']);
-    $router->post('/login/credenciales',[LoginController::class,'credenciales']);
+$router = new Router();
+
+//iniciar Sesion
+$router->get('/',[LoginController::class,'login']);
+$router->post('/',[LoginController::class,'login']);
+$router->get('/credenciales',[LoginController::class,'credenciales']);
+$router->post('/credenciales',[LoginController::class,'credenciales']);
+
+//cerrar sesión
+$router->get('/logout',[LoginController::class,'logout']);
+
+//recuperar password
+$router->get('/olvide',[LoginController::class,'olvide']);  
+$router->post('/olvide',[LoginController::class,'olvide']);
+$router->get('/recuperar',[LoginController::class,'recuperar']);   
+$router->post('/recuperar',[LoginController::class,'recuperar']);
+
+//crear cuenta
+$router->get('/crear-cuenta',[LoginController::class,'crear']);  
+$router->post('/crear-cuenta',[LoginController::class,'crear']);
+
+
+// Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
+$router->comprobarRutas();
+
     
-    $router->comprobarRutas();

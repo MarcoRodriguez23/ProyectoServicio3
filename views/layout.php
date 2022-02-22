@@ -12,15 +12,16 @@
     <header class="header">
         <div class="contenedor">
             <a href="#" class="logotipo">
-                <img  src="" alt="Logotipo">
+                <img  src="/build/img/logotipo.png" alt="Logotipo">
             </a>
             <!-- <div class="mobile-menu">
                 <img src="build/img/barras.svg" alt="icono-responsive">
             </div> -->
             <nav class="navegacion">
-                <a href="#">Registra una concesionaria</a>
-                <a href="#">Compra un auto</a>
-                <a href="#">Vende tu auto</a>
+                <a href="#">Nosotros</a>
+                <a href="#">Compra un automóvil</a>
+                <a href="#">Vende tu automóvil</a>
+                <a href="#">Usuario</a>
             </nav>
         </div> <!--.barra-->
     </header>

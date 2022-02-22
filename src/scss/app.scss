@@ -1,11 +1,3 @@
-@import 'generalidades/normalize';
-@import 'generalidades/mixins';
-@import 'generalidades/variables';
-@import 'generalidades/globales';
-@import 'generalidades/utilidades';
-@import 'generalidades/barraBusqueda';
-
-@import 'diseños/header';
-@import 'diseños/footer';
-@import 'diseños/login';
-@import 'diseños/plantilla-automovil';
+@use 'base';
+@use 'layout';
+@use 'componentes';

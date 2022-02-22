@@ -2,66 +2,63 @@
 
 namespace MVC;
 
-class Router{
-    public $rutasGET=[];
-    public $rutasPOST=[];
-    
-    public function get($url, $fn){
-        $this->rutasGET[$url]=$fn;
+class Router
+{
+    public  $getRoutes = [];
+    public  $postRoutes = [];
+
+    public function get($url, $fn)
+    {
+        $this->getRoutes[$url] = $fn;
     }
 
-    public function post($url, $fn){
-        $this->rutasPOST[$url]=$fn;
+    public function post($url, $fn)
+    {
+        $this->postRoutes[$url] = $fn;
     }
 
-    public function comprobarRutas(){
-        // session_start();
-
-        // $auth= $_SESSION['login']??null;
-
-        // //arreglo de rutas protegidas
-        // $rutas_protegidas=['/admin','propiedades/crear','propiedades/actualizar','propiedades/eliminar','vendedores/crear','vendedores/actualizar','vendedores/eliminar'];
+    public function comprobarRutas()
+    {
         
-        $urlActual =  $_SERVER['PATH_INFO']?? '/';
-        $metodo = $_SERVER['REQUEST_METHOD'];
-        
-        if($metodo === 'GET'){
-            $fn = $this->rutasGET[$urlActual]??null;
-        }
-        else{
-            $fn = $this->rutasPOST[$urlActual]??null;
+        // Proteger Rutas...
+        session_start();
+
+        // Arreglo de rutas protegidas...
+        // $rutas_protegidas = ['/admin', '/propiedades/crear', '/propiedades/actualizar', '/propiedades/eliminar', '/vendedores/crear', '/vendedores/actualizar', '/vendedores/eliminar'];
+
+        // $auth = $_SESSION['login'] ?? null;
+
+        $currentUrl = $_SERVER['PATH_INFO'] ?? '/';
+        $method = $_SERVER['REQUEST_METHOD'];
+
+        if ($method === 'GET') {
+            $fn = $this->getRoutes[$currentUrl] ?? null;
+        } else {
+            $fn = $this->postRoutes[$currentUrl] ?? null;
         }
 
-        // //protegiendo rutas
-        // if(in_array($urlActual, $rutas_protegidas) && !$auth){
-        //     header('Location: /');
-        // }
 
-
-        if($fn){
-            //la URL existe y tiene una funcion asociada, el this le pasa las rutas get y post (atributos)
-            call_user_func($fn,$this);
+        if ( $fn ) {
+            // Call user fn va a llamar una función cuando no sabemos cual sera
+            call_user_func($fn, $this); // This es para pasar argumentos
+        } else {
+            echo "Página No Encontrada o Ruta no válida";
         }
-        else{
-            echo "pagina no encontrada";
-        }
-        // debuguear($this);
     }
 
-    // muestra la vista
-    public function view($view, $datos=[]){
+    public function render($view, $datos = [])
+    {
+
+        // Leer lo que le pasamos  a la vista
         foreach ($datos as $key => $value) {
-            $$key = $value;
+            $$key = $value;  // Doble signo de dolar significa: variable variable, básicamente nuestra variable sigue siendo la original, pero al asignarla a otra no la reescribe, mantiene su valor, de esta forma el nombre de la variable se asigna dinamicamente
         }
 
-        ob_start();
+        ob_start(); // Almacenamiento en memoria durante un momento...
 
-        include __DIR__ . "/views/$view.php";
-
-        $contenido = ob_get_clean();
-
-        include __DIR__ . "/views/layout.php";
-        //cambiar a php cuando acabe el layout
+        // entonces incluimos la vista en el layout
+        include_once __DIR__ . "/views/$view.php";
+        $contenido = ob_get_clean(); // Limpia el Buffer
+        include_once __DIR__ . '/views/layout.php';
     }
-
 }

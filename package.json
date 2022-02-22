@@ -1,14 +1,18 @@
 {
   "name": "proyectoservicio_3",
   "version": "1.0.0",
-  "description": "proyecto 3 servicio social sistema de venta de automoviles",
+  "description": "Proyecto 3 servicio social sistema de venta de automoviles",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarcoRodriguez23/ProyectoServicio3.git"
+  },
   "keywords": [
     "servicio-social",
-    "proyecto",
+    "proyecto-web",
     "sistema-venta-automoviles"
   ],
   "author": "Marco Rodriguez",
@@ -33,5 +37,9 @@
     "gulp-webp": "^4.0.1",
     "sass": "^1.45.0",
     "terser": "^5.10.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/MarcoRodriguez23/ProyectoServicio3/issues"
+  },
+  "homepage": "https://github.com/MarcoRodriguez23/ProyectoServicio3#readme"
 }
