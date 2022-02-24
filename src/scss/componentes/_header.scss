@@ -4,60 +4,80 @@
 .header{
     background-color: v.$negro;
     .contenedor{
-        .logotipo{
-            img{
-                width: 100%;
-                height: 100%;
-            }
-            @include m.tablet{
-                margin: auto 1rem;
-                height: 60%;
-                width: auto;
-                overflow: hidden;
-            }
-        }
-        .navegacion{
-            margin: 2rem auto;
+        .barra{
             display: flex;
             flex-direction: column;
-            a{
-                text-align: center;
-                width: 60%;
-                margin: 0.5rem auto;
-
-                background-color: v.$blanco;
-                padding: 1rem;
-                border-radius: 1rem;
-                color: v.$azul;
-                font-weight: v.$bold;
-                transition: all 250ms ease;
-                &:hover{
-                    background-color: v.$azul;
-                    color: v.$blanco;
-                }
-            }
-            
-        }
-    }
-    
-    @include m.tablet{
-        height: 8rem;
-        .contenedor{
-            margin: auto;
-            height: 100%;
-            display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            .navegacion{
-                margin: 0;
-                display: inline-block;
-                a{
-                    margin-right: 1rem;
-                }
-                
+            // .logotipo{
 
+            // }
+            .navegacion{
+                // display: none;
+                a{
+                    display: block;
+                    text-align: center;
+                    background-color: v.$blanco;
+                    padding: 1rem;
+                    margin: 1rem auto;
+                    color: v.$azul;
+                    border-radius: 1rem;
+                    font-weight: v.$bold;
+                    transition: all 250ms ease;
+                        &:hover{
+                            background-color: v.$azul;
+                            color: v.$blanco;
+                        }
+                }
             }
         }
     }
-    
+
+    @include m.tablet{
+        .contenedor{
+            height: 6rem;
+            .barra{
+                height: 100%;
+                flex-direction: row;
+                justify-content: space-between;
+                a{
+                    height: 80%;
+                    img{
+                        height: 100%;
+                    }
+                }
+                .navegacion{
+                    display: flex;
+                    a{
+                        margin-left: 2rem;
+                        &:first-of-type{
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*menu de hamburguesa*/
+.mobile-menu{
+    cursor: pointer;
+    @include m.tablet{
+        display: none;
+    }
+    img{
+        width: 5rem;
+    }
+}
+
+.mostrar{
+    // visibility: visible;
+    // opacity: 1;
+    display: block;
+    // height: auto;
+
+    // @include m.tablet{
+    //     flex-direction: row;
+    // }
 }

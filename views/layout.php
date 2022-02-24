@@ -11,19 +11,21 @@
 <body>
     <header class="header">
         <div class="contenedor">
-            <a href="#" class="logotipo">
-                <img  src="/build/img/logotipo.png" alt="Logotipo">
-            </a>
-            <!-- <div class="mobile-menu">
-                <img src="build/img/barras.svg" alt="icono-responsive">
-            </div> -->
-            <nav class="navegacion">
-                <a href="#">Nosotros</a>
-                <a href="#">Compra un automóvil</a>
-                <a href="#">Vende tu automóvil</a>
-                <a href="#">Usuario</a>
-            </nav>
-        </div> <!--.barra-->
+            <div class="barra">
+                <a href="#" class="logotipo">
+                    <img  src="/build/img/logotipo.png" alt="Logotipo">
+                </a>
+                <div class="mobile-menu">
+                    <img src="build/img/barras.svg" alt="icono-responsive">
+                </div>
+                <nav class="navegacion">
+                    <a href="#">Nosotros</a>
+                    <a href="#">Compra un automóvil</a>
+                    <a href="#">Vende tu automóvil</a>
+                    <a href="#">Usuario</a>
+                </nav>
+            </div>
+        </div>
     </header>
     
     <?php
@@ -34,5 +36,5 @@
         <p>Todos los derechos reservados <?php echo date('Y'); ?> &copy;</p>
     </footer>
 </body>
-<script src="/build/js/bundle.js"></script>
+<script src="/build/js/app.js"></script>
 </html>

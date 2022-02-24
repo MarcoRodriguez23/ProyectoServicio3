@@ -27,6 +27,25 @@ $router->post('/recuperar',[LoginController::class,'recuperar']);
 $router->get('/crear-cuenta',[LoginController::class,'crear']);  
 $router->post('/crear-cuenta',[LoginController::class,'crear']);
 
+//usuario dentro
+$router->get('/profile',[UserController::class,'profile']); 
+$router->get('/options',[UserController::class,'options']); 
+$router->get('/options-buy',[UserController::class,'options-buy']); 
+$router->get('/options-sell',[UserController::class,'options-sell']); 
+$router->get('/options-dates',[UserController::class,'options-dates']); 
+
+//menu de compra
+$router->get('/buy-newCar',[UserController::class,'buy']); 
+$router->get('/buy-myInterest',[UserController::class,'myInterest']); 
+$router->get('/buy-dates',[UserController::class,'dates']);
+
+//menu de venta
+$router->get('/sell-newCar',[UserController::class,'sell']); 
+$router->get('/sell-record',[UserController::class,'record']); 
+
+//proceso de compra
+$router->get('/buy-aboutCar',[UserController::class,'individualCar']);
+$router->get('/buy-schedule',[UserController::class,'schedule']);
 
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
 $router->comprobarRutas();
