@@ -12,7 +12,7 @@
     <header class="header">
         <div class="contenedor">
             <div class="barra">
-                <a href="#" class="logotipo">
+                <a href="/" class="logotipo">
                     <img  src="/build/img/logotipo.png" alt="Logotipo">
                 </a>
                 <div class="mobile-menu">
@@ -20,9 +20,9 @@
                 </div>
                 <nav class="navegacion">
                     <a href="#">Nosotros</a>
-                    <a href="#">Compra un automóvil</a>
-                    <a href="#">Vende tu automóvil</a>
-                    <a href="#">Usuario</a>
+                    <a href="/">Compra un automóvil</a>
+                    <a href="/sell-newCar">Vende tu automóvil</a>
+                    <a href="/options">Usuario</a>
                 </nav>
             </div>
         </div>
