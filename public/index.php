@@ -4,6 +4,7 @@ require_once __DIR__ . '/../includes/app.php';
 
 use MVC\Router;
 use Controllers\LoginController;
+use Controllers\AdminController;
 use Controllers\UserController;
 
 $router = new Router();
@@ -26,6 +27,21 @@ $router->post('/recuperar',[LoginController::class,'recuperar']);
 //crear cuenta
 $router->get('/crear-cuenta',[LoginController::class,'crear']);  
 $router->post('/crear-cuenta',[LoginController::class,'crear']);
+
+//administrador
+$router->get('/admin-options',[AdminController::class,'options']);
+$router->get('/admin-dealerships-cities',[AdminController::class,'dealershipsCities']);
+$router->get('/admin-dealerships',[AdminController::class,'dealerships']);
+$router->get('/admin-cars',[AdminController::class,'cars']);
+$router->get('/admin-car',[AdminController::class,'car']);
+$router->get('/admin-clients',[AdminController::class,'clients']);
+$router->get('/admin-client',[AdminController::class,'client']);
+$router->get('/admin-dates',[AdminController::class,'dates']);
+$router->get('/admin-date',[AdminController::class,'date']);
+$router->get('/admin-validate-dealerships',[AdminController::class,'validateDealerships']);
+$router->get('/admin-validate-dealership',[AdminController::class,'validateDealership']);
+$router->get('/admin-new-dealership',[AdminController::class,'newDealership']);
+
 
 //usuario dentro
 $router->get('/profile',[UserController::class,'profile']); 
