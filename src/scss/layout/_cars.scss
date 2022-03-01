@@ -1,0 +1,41 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.cars{
+
+
+    .car{
+        border: 1px solid v.$gris;
+        margin: 3rem auto;
+        width: 80%;
+        border-radius: 0 1rem 1rem 0;
+        .info-car{
+            padding: 1rem;
+            h4{
+                margin: 0;
+                font-size: 1.8rem;
+            }
+            p{
+                color: v.$azul;
+                font-weight: v.$bold;
+            }
+            span{
+                color: v.$negro;
+            }
+        }
+        transition: all 250ms ease;
+        &:hover{
+            transform: scale(1.05);
+        }
+    }
+
+    @include m.tablet{
+
+        .car{
+            width: 90%;
+            display: grid;
+            grid-template-columns: 30% 70%;
+
+        }
+    }
+}

@@ -11,16 +11,34 @@ class AdminController{
     }
 
     public function citiesDealerships(Router $router){
-        echo "lista  de concesionarias";
+        $router->render('admin/citiesDealerships',[
+
+        ]);
     }
 
     public function validateDealerships(Router $router){
-        echo "validar concesionarias";
+        $router->render('admin/validateDealerships',[
+
+        ]);
     }
 
-    // public function newDealership(Router $router){
-    //     echo "nueva concesionaria";
-    // }
+    public function newDealership(Router $router){
+        $router->render('admin/createDealership',[
+
+        ]);
+    }
+
+    public function dealerships(Router $router){
+        $router->render('admin/dealerships',[
+
+        ]);
+    }
+
+    public function cars(Router $router){
+        $router->render('admin/cars',[
+            
+        ]);
+    }
     
     
 }

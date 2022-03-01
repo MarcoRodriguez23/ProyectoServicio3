@@ -30,7 +30,7 @@ $router->post('/crear-cuenta',[LoginController::class,'crear']);
 
 //administrador
 $router->get('/admin-options',[AdminController::class,'options']);
-$router->get('/admin-dealerships-cities',[AdminController::class,'dealershipsCities']);
+$router->get('/admin-cities',[AdminController::class,'citiesDealerships']);
 $router->get('/admin-dealerships',[AdminController::class,'dealerships']);
 $router->get('/admin-cars',[AdminController::class,'cars']);
 $router->get('/admin-car',[AdminController::class,'car']);

@@ -1,0 +1,40 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.buscador{
+    background-color: v.$azul;
+    // height: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    input{
+        border-radius: 0.5rem;
+        border: none;
+        margin: 2rem auto;
+        padding: 0.5rem 1rem;
+        display: block;
+        
+    }
+    input[type="submit"]{
+        color: v.$azul;
+        background-color: v.$blanco;
+        transition: all 250ms ease;
+        &:hover{
+            cursor: pointer;
+            font-weight: v.$bold;
+            transform: scale(1.1);
+        }
+    }
+
+    @include m.tablet{
+        flex-direction: row;
+        input{
+            display: inline;
+            margin-right: 1rem;
+            &:last-of-type{
+                margin-right: 0;
+            }
+        }
+    }
+}

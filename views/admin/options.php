@@ -9,7 +9,7 @@
                 <img src="/build/img/login.jpg" alt="">
                 <div>
                     <h3>
-                        Crear nueva concesionaria
+                        Crear nueva <br>concesionaria
                     </h3>
                 </div> 
             </a>
@@ -19,17 +19,17 @@
                 <img src="/build/img/login.jpg" alt="">
                 <div>
                     <h3>
-                        Validar concesionarias
+                        Validar <br>concesionarias
                     </h3>
                 </div>
             </a>
         </li>
         <li class="user-option">
-            <a href="/admin-cities-dealerships">    
+            <a href="/admin-cities">    
                 <img src="/build/img/login.jpg" alt="">
                 <div>
                     <h3>
-                        Consultar concesionaria
+                        Consultar <br>concesionaria
                     </h3>
                 </div>
             </a>

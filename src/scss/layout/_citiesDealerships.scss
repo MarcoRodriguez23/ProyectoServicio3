@@ -1,0 +1,55 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.cities{
+    margin: 2rem auto;
+    .city{
+        .city-list{
+            list-style: none;
+            height: auto;
+            padding: 0.5rem;
+            a{
+                border: 1px solid black;
+                width: 100%;
+                display: block;
+                padding: 1rem;
+                text-align: center;
+                border: 1px solid v.$negro;
+                font-weight: v.$bold;
+                color: v.$negro;
+                transition: all 250ms ease;
+                &:hover{
+                    background-color: v.$azul;
+                    color: v.$blanco;
+                }
+                
+                &:first-of-type{
+                    border-radius: 1rem 1rem 0 0;
+                }
+                &:last-of-type{
+                    border-radius: 0 0 1rem 1rem;
+                }
+            }
+        }
+        
+    }
+
+    @include m.tablet{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 2rem;
+    }
+}
+
+.city-title{
+    color: v.$azul;
+    &::after{
+        content: '';
+        display: block;
+        width: 50%;
+        margin: auto;
+        height: 0.4rem;
+        background-color: v.$azul;
+        border-radius: 0.5rem;
+    }
+}
